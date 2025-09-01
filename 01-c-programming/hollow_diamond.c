@@ -27,7 +27,7 @@ int main()
         
     }
     //bottom half
-    for (i = 2; i < n; i++)
+    for (i = 2; i <= n; i++)
     {
         for (j = 1; j < i; j++ )
         {
@@ -35,16 +35,16 @@ int main()
         }
         printf("*");
 
-        for (k = 1; k <= 2*((n-1)-i)-1; k++)
+        for (k = 1; k <= 2*(n-i)-1; k++)
         {
             printf(" ");
         }
-        
-        if(i < n)
+    
+        if(i !=n)
         {
             printf("*");
         }
-        
+
         printf("\n");
     }
 
