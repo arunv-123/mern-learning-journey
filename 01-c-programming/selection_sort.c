@@ -1,8 +1,15 @@
 #include <stdio.h>
 int main()
 {
-    int n=5, i, j, temp=0,k;
-    int array[5]={4,1,6,2,9};
+    int n, i, j, temp=0,k;
+    printf("Enter the size: ");
+    scanf("%d",&n);
+    int array[n];
+    printf("Enter the elements:\n");
+    for (i=0; i<n; i++)
+    {
+    scanf("%d",&array[i]);
+    }
     for (i=0; i<n; i++)
     {
         for (j=i+1; j<n; j++)
