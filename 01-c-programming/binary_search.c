@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int i, size, target, found=0;
+    int i, key, j, size, target, found=0;
     printf("Enter the size: ");
     scanf("%d", &size);
     int array[size];
@@ -9,6 +9,18 @@ int main()
     for (i = 0; i < size; i++)
     {
         scanf("%d", &array[i]);
+    }
+
+    for (i = 0; i < size; i++) {
+        key = array[i];
+        j = i - 1;
+
+        while (j >= 0 && array[j] > key) {
+            array[j + 1] = array[j];
+            j = j - 1;
+        }
+
+        array[j + 1] = key; 
     }
     printf("Enter the value to find: ");
     scanf("%d", &target);
@@ -21,7 +33,7 @@ int main()
         mid = (low + high) / 2;
         if (array[mid] == target)
         {
-            printf("The element %d is found at index %d", target, i);
+            printf("The element %d is found at index %d", target, mid);
             found = 1;
             break;
         }
