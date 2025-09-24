@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Lists Master Reference</title>
+  
+  <!-- list-style-type → bullet/number style
+
+list-style-position → inside/outside bullet placement
+
+list-style-image → custom image as bullet -->
+
+</head>
+<body>
+  <h1>HTML Lists Master Reference</h1>
+
+  <!-- 1. Unordered List -->
+  <h2>1. Unordered List (&lt;ul&gt;)</h2>
+  <p>Basic unordered list with bullets:</p>
+  <ul>
+    <li>Fruits
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+      </ul>
+    </li>
+    <li>Vegetables
+      <ul>
+        <li>Carrot</li>
+        <li>Broccoli</li>
+        <li>Spinach</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>Unordered list with different bullet types (via HTML attribute <code>type</code> or CSS):</p>
+  <ul type="circle">
+    <li>Circle bullet</li>
+    <li>Circle bullet</li>
+  </ul>
+  <ul type="square">
+    <li>Square bullet</li>
+    <li>Square bullet</li>
+  </ul>
+
+  <!-- 2. Ordered List -->
+  <h2>2. Ordered List (&lt;ol&gt;)</h2>
+  <p>Basic ordered list:</p>
+  <ol>
+    <li>Step 1</li>
+    <li>Step 2</li>
+    <li>Step 3</li>
+  </ol>
+
+  <p>Ordered list with type attribute:</p>
+  <ol type="A">
+    <li>Uppercase letter</li>
+    <li>Uppercase letter</li>
+  </ol>
+  <ol type="a">
+    <li>Lowercase letter</li>
+    <li>Lowercase letter</li>
+  </ol>
+  <ol type="I">
+    <li>Upper Roman</li>
+    <li>Upper Roman</li>
+  </ol>
+  <ol type="i">
+    <li>Lower Roman</li>
+    <li>Lower Roman</li>
+  </ol>
+
+  <p>Ordered list with <code>start</code> and <code>reversed</code>:</p>
+  <ol start="5">
+    <li>Start from 5</li>
+    <li>Step 6</li>
+  </ol>
+  <ol reversed>
+    <li>Last step</li>
+    <li>Second last step</li>
+  </ol>
+
+  <!-- 3. Nested Lists -->
+  <h2>3. Nested Lists</h2>
+  <p>Mixing ordered and unordered lists:</p>
+  <ol>
+    <li>Programming Languages
+      <ul>
+        <li>Frontend
+          <ol type="i">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ol>
+        </li>
+        <li>Backend
+          <ul>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Java</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Tools
+      <ul>
+        <li>VS Code</li>
+        <li>Git</li>
+        <li>Browser DevTools</li>
+      </ul>
+    </li>
+  </ol>
+
+  <!-- 4. Description List -->
+  <h2>4. Description List (&lt;dl&gt;)</h2>
+  <p>Term-definition pairs:</p>
+  <dl>
+    <dt>HTML</dt>
+    <dd>HyperText Markup Language</dd>
+    <dt>CSS</dt>
+    <dd>Cascading Style Sheets</dd>
+    <dt>JavaScript</dt>
+    <dd>Programming language for interactive web pages</dd>
+    <dt>Node.js</dt>
+    <dd>JavaScript runtime for server-side programming</dd>
+  </dl>
+
+  <p>Multiple definitions for one term:</p>
+  <dl>
+    <dt>Python</dt>
+    <dd>High-level programming language</dd>
+    <dd>Used for web development, data science, and AI</dd>
+  </dl>
+
+  <!-- 5. Summary of Nesting -->
+  <h2>5. Nesting Example Summary</h2>
+  <p>Complex outline combining all types:</p>
+  <ul>
+    <li>Learning Web Development
+      <ol>
+        <li>Frontend
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </li>
+        <li>Backend
+          <ul>
+            <li>Node.js</li>
+            <li>Python</li>
+          </ul>
+        </li>
+      </ol>
+    </li>
+    <li>Tools
+      <ul>
+        <li>VS Code</li>
+        <li>Git & GitHub</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>
