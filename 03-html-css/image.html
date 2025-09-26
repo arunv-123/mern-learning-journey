@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Images Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        img {
+            margin: 10px;
+            border: 2px solid #555;
+        }
+
+        .rounded {
+            border-radius: 15px;
+        }
+
+        .shadow {
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .small {
+            width: 150px;
+            height: auto;
+        }
+
+        .medium {
+            width: 300px;
+            height: auto;
+        }
+
+        .large {
+            width: 500px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Images Demo</h1>
+
+    <h2>1. Simple Image</h2>
+    <img src="files/flower.jpg" alt="Red Rose">
+
+    <h2>2. Image with Title</h2>
+    <img src="files/flower.jpg" alt="Red Rose" title="Beautiful Red Rose">
+
+    <h2>3. Image with Rounded Corners and Shadow</h2>
+    <img src="files/flower.jpg" alt="Red Rose" class="rounded shadow">
+
+    <h2>4. Different Sizes</h2>
+    <img src="files/flower.jpg" alt="Small Flower" class="small">
+    <img src="files/flower.jpg" alt="Medium Flower" class="medium">
+    <img src="files/flower.jpg" alt="Large Flower" class="large">
+
+    <h2>5. Lazy Loading Example</h2>
+    <img src="files/flower.jpg" alt="Red Rose" loading="lazy">
+
+</body>
+</html>
