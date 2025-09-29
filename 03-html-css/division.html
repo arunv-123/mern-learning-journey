@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Div Examples</title>
+  <style>
+    /* 1️⃣ Basic class selector */
+    .box {
+      background: lightblue;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #333;
+    }
+
+    /* 2️⃣ ID selector */
+    #unique-box {
+      background: lightgreen;
+    }
+
+    /* 3️⃣ Multiple classes on same div (no space) */
+    .card.highlight {
+      border: 3px solid orange;
+    }
+
+    /* 4️⃣ Descendant selector (space) */
+    .container .card {
+      background: yellow;
+    }
+
+    /* 5️⃣ Direct child selector (>) */
+    .container > .card {
+      background: pink;
+    }
+
+    /* 6️⃣ Tag + class selector */
+    div.card {
+      font-weight: bold;
+    }
+
+    /* 7️⃣ Grouping multiple classes */
+    .note, .alert, .warning {
+      font-style: italic;
+      background: #f5f5f5;
+    }
+
+    /* 8️⃣ Pseudo-class example */
+    .hover-box:hover {
+      background: lightcoral;
+      cursor: pointer;
+    }
+
+    /* 9️⃣ Pseudo-element examples */
+    .pseudo::before {
+      content: "⭐ ";
+    }
+    .pseudo::after {
+      content: " 🌟";
+    }
+
+    /* 🔟 Complex nested selectors */
+    .wrapper .card.highlight > .title {
+      color: red;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1️⃣ Basic div with class -->
+  <div class="box">Basic .box div</div>
+
+  <!-- 2️⃣ Div with ID -->
+  <div id="unique-box" class="box">This div has an ID (#unique-box)</div>
+
+  <!-- 3️⃣ Multiple classes on same div -->
+  <div class="card highlight">.card + .highlight (both applied)</div>
+
+  <!-- 4️⃣ + 5️⃣ Nested divs for descendant vs child selectors -->
+  <div class="container box">
+    <div class="card">Direct child .card ✅</div>
+
+    <div class="inner">
+      <div class="card">Nested .card (grandchild) ✅ only with space selector</div>
+    </div>
+  </div>
+
+  <!-- 6️⃣ Tag + class selector -->
+  <div class="card">div.card example</div>
+  <p class="card">p.card example (different tag)</p>
+
+  <!-- 7️⃣ Grouping multiple class styles -->
+  <div class="note">This is a .note</div>
+  <div class="alert">This is an .alert</div>
+  <div class="warning">This is a .warning</div>
+
+  <!-- 8️⃣ Pseudo-class example -->
+  <div class="hover-box box">Hover over me 👆</div>
+
+  <!-- 9️⃣ Pseudo-element example -->
+  <div class="pseudo box">Pseudo-element added text</div>
+
+  <!-- 🔟 Complex nested selector example -->
+  <div class="wrapper box">
+    <div class="card highlight">
+      <div class="title">Targeted by complex selector (.wrapper .card.highlight > .title)</div>
+    </div>
+  </div>
+
+</body>
+</html>
