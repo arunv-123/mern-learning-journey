@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic HTML Example</title>
+</head>
+<body>
+
+  <!-- 🧭 HEADER: Top section of the page (logo, title, navigation) -->
+  <header>
+    <h1>My Awesome Website</h1>
+
+    <!-- 🧩 NAV: Navigation links -->
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🎯 MAIN: The main content area of the page -->
+  <main>
+
+    <!-- 🪶 SECTION: Thematic grouping of content -->
+    <section id="introduction">
+      <h2>Welcome to My Website</h2>
+      <p>This website is built using <strong>semantic HTML</strong> for better structure and SEO.</p>
+    </section>
+
+    <!-- 📰 ARTICLE: A self-contained piece of content (like a blog post or news item) -->
+    <article id="blog-post">
+      <header>
+        <h2>Why Semantic Tags Matter</h2>
+        <p>Published on <time datetime="2025-10-09">October 9, 2025</time></p>
+      </header>
+
+      <p>Semantic tags help both search engines and developers understand your webpage structure better.</p>
+
+      <!-- 🖼️ FIGURE + FIGCAPTION: For images, diagrams, or illustrations with captions -->
+      <figure>
+        <img src="files/html-sementics-layout.png" title="Diagram showing semantic layout" width="400">
+        <figcaption>Figure: Example of a semantic page layout</figcaption>
+      </figure>
+
+      <footer>
+        <p>Written by <address>Arun V</address></p>
+      </footer>
+    </article>
+
+    <!-- 💬 ASIDE: Extra info or sidebar not part of main flow -->
+    <aside>
+      <h3>Did You Know?</h3>
+      <p>HTML5 introduced over a dozen new semantic elements!</p>
+    </aside>
+
+    <!-- 🎨 SECTION 2: Another thematic area -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>You can reach us at:</p>
+      <!-- 🏠 ADDRESS: Contact or author info -->
+      <address>
+        Email: <a href="mailto:info@example.com">info@example.com</a><br>
+        Location: Coimbatore, India
+      </address>
+    </section>
+
+  </main>
+
+  <!-- 🦶 FOOTER: Bottom section of the page -->
+  <footer>
+    <p>&copy; 2025 My Awesome Website</p>
+    <nav aria-label="Footer Links">
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
+
+<!-- 
++--------------------------------------------------+
+|                    <header>                      |
+|        Logo | Website Name | Navigation          |
++--------------------------------------------------+
+|                    <nav>                         |
+|        Home | About | Services | Contact         |
++--------------------------------------------------+
+|                    <main>                        |
+|  +---------------------------+  +--------------+ |
+|  |        <article>          |  |   <aside>    | |
+|  |  Main content area        |  | Related info | |
+|  |  Blog posts, sections     |  | Ads, tips    | |
+|  +---------------------------+  +--------------+ |
++--------------------------------------------------+
+|                    <footer>                      |
+|         © 2025 My Website | Privacy Policy       |
++--------------------------------------------------+
+  -->
