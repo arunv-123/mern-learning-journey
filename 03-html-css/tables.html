@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Table Example</title>
+  <style>
+    /* Table styling */
+    table {
+      border-collapse: collapse; /* remove double borders */
+      width: 80%;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header, data, and footer cell styles */
+    th, td {
+      border: 1px solid #555;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Header row background */
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    /* Footer row background */
+    tfoot td {
+      background-color: #faf0d7;
+      font-weight: bold;
+    }
+
+    /* Caption styling */
+    caption {
+      caption-side: top;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Zebra effect for alternate rows */
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>📊 Student Performance Report</caption>
+    
+    <thead>
+      <tr>
+        <th rowspan="2">Student Name</th>
+        <th colspan="3">Subjects</th>
+        <th rowspan="2">Average</th>
+      </tr>
+      <tr>
+        <th>Math</th>
+        <th>Science</th>
+        <th>English</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Arun</td>
+        <td>95</td>
+        <td>90</td>
+        <td>88</td>
+        <td>91</td>
+      </tr>
+      <tr>
+        <td>Meera</td>
+        <td>85</td>
+        <td>92</td>
+        <td>89</td>
+        <td>88.6</td>
+      </tr>
+      <tr>
+        <td>Ravi</td>
+        <td>78</td>
+        <td>81</td>
+        <td>74</td>
+        <td>77.6</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="4">Class Average</td>
+        <td>85.7</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
