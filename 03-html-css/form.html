@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete HTML Form</title>
+</head>
+<body>
+  <h1>Complete HTML Form Example</h1>
+
+  <!-- Form starts here -->
+  <!-- action: where the data is sent -->
+  <!-- method: how the data is sent (GET or POST) -->
+  <form action="#" method="post">
+
+    <!-- Text input: single-line -->
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required minlength="3" maxlength="30">
+    <br><br>
+
+    <!-- Email input: validates email automatically -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <br><br>
+
+    <!-- Password input: hides typed text -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required minlength="6">
+    <br><br>
+
+    <!-- Number input with min and max -->
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="1" max="100">
+    <br><br>
+
+    <!-- Radio buttons: choose one option -->
+    <p>Gender:</p>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <br><br>
+
+    <!-- Checkboxes: choose multiple options -->
+    <p>Hobbies:</p>
+    <input type="checkbox" id="coding" name="hobby" value="coding">
+    <label for="coding">Coding</label>
+
+    <input type="checkbox" id="music" name="hobby" value="music">
+    <label for="music">Music</label>
+
+    <input type="checkbox" id="reading" name="hobby" value="reading">
+    <label for="reading">Reading</label>
+    <br><br>
+
+    <!-- Color input -->
+    <label for="favcolor">Favorite Color:</label>
+    <input type="color" id="favcolor" name="favcolor">
+    <br><br>
+
+    <!-- Date input -->
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+    <br><br>
+
+    <!-- File input -->
+    <label for="resume">Upload Resume:</label>
+    <input type="file" id="resume" name="resume">
+    <br><br>
+
+    <!-- Textarea: multi-line input -->
+    <label for="bio">Short Bio:</label>
+    <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Write something about yourself..."></textarea>
+    <br><br>
+
+    <!-- Dropdown select -->
+    <label for="country">Select Country:</label>
+    <select id="country" name="country" required>
+      <option value="">--Select--</option>
+      <option value="india">India</option>
+      <option value="usa">USA</option>
+      <option value="uk">UK</option>
+    </select>
+    <br><br>
+
+    <!-- Hidden input -->
+    <input type="hidden" name="userid" value="12345">
+
+    <!-- Submit button: sends form data -->
+    <input type="submit" value="Register">
+
+    <!-- Reset button: clears all inputs -->
+    <input type="reset" value="Clear Form">
+
+  </form>
+</body>
+</html>
