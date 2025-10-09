@@ -1,0 +1,20 @@
+/* ===== External CSS ===== */
+/* This CSS is in a separate file and can be used across multiple pages */
+
+/* Style all h1 elements */
+h1 {
+    color: darkred;
+}
+
+/* Style all paragraphs */
+p {
+    font-size: 18px;
+    color: green;
+}
+
+/* Style divs with class "external-box" */
+.external-box {
+    border: 2px solid blue;
+    padding: 10px;
+    margin: 10px 0;
+}
