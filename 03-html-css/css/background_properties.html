@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Background Properties Example</title>
+
+<style>
+/* 🎨 GENERAL PAGE STYLE */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* light background for contrast */
+  padding: 40px;
+}
+
+/* ===============================
+   🧱 1. BACKGROUND-COLOR
+   =============================== */
+.color-box {
+  background-color: lightblue; /* sets solid background color */
+  padding: 20px;
+  border: 2px solid #333;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   🖼️ 2. BACKGROUND-IMAGE
+   =============================== */
+.image-box {
+  background-image: url('https://picsum.photos/300/200'); /* sets image as background */
+  background-color: lightgray; /* fallback color if image fails to load */
+  width: 300px;
+  height: 200px;
+  border: 2px solid #333;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   📍 3. BACKGROUND-REPEAT
+   =============================== */
+.repeat-box {
+  background-image: url('https://picsum.photos/100/100');
+  background-repeat: repeat-x; /* repeats image horizontally only */
+  width: 400px;
+  height: 150px;
+  border: 2px solid #333;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   📦 4. BACKGROUND-SIZE
+   =============================== */
+.size-box {
+  background-image: url('https://picsum.photos/300/200');
+  background-size: cover; /* covers full box (may crop image) */
+  /* other options: contain | auto | 100px 200px (custom size) */
+  width: 300px;
+  height: 200px;
+  border: 2px solid #333;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   🎯 5. BACKGROUND-POSITION
+   =============================== */
+.position-box {
+  background-image: url('https://picsum.photos/150/150');
+  background-repeat: no-repeat;
+  background-position: right bottom; /* positions image at bottom-right corner */
+  width: 300px;
+  height: 200px;
+  border: 2px solid #333;
+  background-color: #eee;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   📜 6. BACKGROUND-ATTACHMENT
+   =============================== */
+.attachment-box {
+  background-image: url('https://picsum.photos/400/400');
+  background-attachment: fixed; /* makes background stay fixed while scrolling */
+  background-size: cover;
+  height: 300px;
+  border: 2px solid #333;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   🧩 7. BACKGROUND-CLIP
+   =============================== */
+.clip-box {
+  background-color: lightcoral;
+  background-clip: content-box; 
+  /* options:
+     border-box (default) → fills entire box including border
+     padding-box → fills only padding + content area
+     content-box → fills only content area */
+  border: 10px dashed #333;
+  padding: 40px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   🧱 8. BACKGROUND-ORIGIN
+   =============================== */
+.origin-box {
+  background-image: url('https://picsum.photos/100/100');
+  background-repeat: no-repeat;
+  background-origin: padding-box; 
+  /* options:
+     border-box → image starts from outer border edge
+     padding-box → starts from inside border
+     content-box → starts from inside padding */
+  border: 10px solid #333;
+  padding: 30px;
+  height: 150px;
+  width: 250px;
+  background-color: #ddd;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   🧭 9. BACKGROUND-SHORTHAND
+   =============================== */
+/*
+You can set multiple background properties in one line:
+background: color image position/size repeat attachment origin clip;
+*/
+.shorthand-box {
+  background: lightgreen url('https://picsum.photos/200/200') center/cover no-repeat fixed border-box content-box;
+  width: 300px;
+  height: 200px;
+  border: 2px solid #333;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+  <h1>🎨 CSS Background Properties Explained</h1>
+
+  <div class="color-box">1️⃣ background-color: Light Blue</div>
+  <div class="image-box">2️⃣ background-image + color fallback</div>
+  <div class="repeat-box">3️⃣ background-repeat: repeat-x</div>
+  <div class="size-box">4️⃣ background-size: cover</div>
+  <div class="position-box">5️⃣ background-position: right bottom</div>
+  <div class="attachment-box">
+    6️⃣ background-attachment: fixed (scroll and see background stays still)
+  </div>
+  <div class="clip-box">7️⃣ background-clip: content-box</div>
+  <div class="origin-box">8️⃣ background-origin: padding-box</div>
+  <div class="shorthand-box">9️⃣ background shorthand property example</div>
+</body>
+</html>
