@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All CSS Background Property Examples</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  padding: 40px;
+  line-height: 1.4;
+}
+
+h2 {
+  margin-top: 50px;
+  color: #333;
+}
+
+/* Common style for all boxes */
+.box {
+  width: 200px;
+  height: 150px;
+  border: 2px solid #333;
+  margin: 10px;
+  display: inline-block;
+  color: #333;
+  text-align: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* ===============================
+   1️⃣ BACKGROUND-COLOR
+   =============================== */
+.color-named { background-color: lightblue; }
+.color-hex { background-color: #ff9999; }
+.color-rgb { background-color: rgb(255, 200, 100); }
+.color-hsl { background-color: hsl(120, 60%, 70%); }
+.color-transparent { background-color: transparent; border-style: dashed; }
+
+/* ===============================
+   2️⃣ BACKGROUND-IMAGE
+   =============================== */
+.image-single {
+  background-image: url('https://picsum.photos/200/150');
+}
+.image-multiple {
+  background-image: url('https://picsum.photos/80/80?1'), url('https://picsum.photos/80/80?2');
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+}
+.image-gradient {
+  background-image: linear-gradient(to right, #ff9a9e, #fad0c4);
+}
+
+/* ===============================
+   3️⃣ BACKGROUND-REPEAT
+   =============================== */
+.repeat-repeat {
+  background-image: url('https://picsum.photos/60/60');
+  background-repeat: repeat;
+}
+.repeat-x {
+  background-image: url('https://picsum.photos/60/60');
+  background-repeat: repeat-x;
+}
+.repeat-y {
+  background-image: url('https://picsum.photos/60/60');
+  background-repeat: repeat-y;
+}
+.no-repeat {
+  background-image: url('https://picsum.photos/60/60');
+  background-repeat: no-repeat;
+}
+.repeat-space {
+  background-image: url('https://picsum.photos/60/60');
+  background-repeat: space;
+}
+.repeat-round {
+  background-image: url('https://picsum.photos/60/60');
+  background-repeat: round;
+}
+
+/* ===============================
+   4️⃣ BACKGROUND-SIZE
+   =============================== */
+.size-auto {
+  background: url('https://picsum.photos/200/150') no-repeat;
+  background-size: auto;
+}
+.size-cover {
+  background: url('https://picsum.photos/200/150') no-repeat center;
+  background-size: cover;
+}
+.size-contain {
+  background: url('https://picsum.photos/200/150') no-repeat center;
+  background-size: contain;
+}
+.size-fixed {
+  background: url('https://picsum.photos/200/150') no-repeat center;
+  background-size: 100px 100px;
+}
+.size-percentage {
+  background: url('https://picsum.photos/200/150') no-repeat center;
+  background-size: 50% 50%;
+}
+
+/* ===============================
+   5️⃣ BACKGROUND-POSITION
+   =============================== */
+.position-center {
+  background: url('https://picsum.photos/80/80') no-repeat center;
+}
+.position-top-left {
+  background: url('https://picsum.photos/80/80') no-repeat top left;
+}
+.position-top-right {
+  background: url('https://picsum.photos/80/80') no-repeat top right;
+}
+.position-bottom-left {
+  background: url('https://picsum.photos/80/80') no-repeat bottom left;
+}
+.position-bottom-right {
+  background: url('https://picsum.photos/80/80') no-repeat bottom right;
+}
+.position-custom {
+  background: url('https://picsum.photos/80/80') no-repeat 30px 50px;
+}
+
+/* ===============================
+   6️⃣ BACKGROUND-ATTACHMENT
+   =============================== */
+.attachment-scroll {
+  background: url('https://picsum.photos/200/150') no-repeat;
+  background-attachment: scroll;
+}
+.attachment-fixed {
+  background: url('https://picsum.photos/200/150') no-repeat center;
+  background-attachment: fixed;
+}
+.attachment-local {
+  background: url('https://picsum.photos/200/150') no-repeat;
+  background-attachment: local;
+  overflow: auto;
+}
+
+/* ===============================
+   7️⃣ BACKGROUND-CLIP
+   =============================== */
+.clip-border {
+  background-color: lightcoral;
+  border: 10px dashed #333;
+  background-clip: border-box;
+  padding: 20px;
+}
+.clip-padding {
+  background-color: lightseagreen;
+  border: 10px dashed #333;
+  background-clip: padding-box;
+  padding: 20px;
+}
+.clip-content {
+  background-color: lightgoldenrodyellow;
+  border: 10px dashed #333;
+  background-clip: content-box;
+  padding: 20px;
+}
+
+/* ===============================
+   8️⃣ BACKGROUND-ORIGIN
+   =============================== */
+.origin-border {
+  background: url('https://picsum.photos/100/100') no-repeat;
+  border: 10px solid #333;
+  background-origin: border-box;
+  padding: 30px;
+}
+.origin-padding {
+  background: url('https://picsum.photos/100/100') no-repeat;
+  border: 10px solid #333;
+  background-origin: padding-box;
+  padding: 30px;
+}
+.origin-content {
+  background: url('https://picsum.photos/100/100') no-repeat;
+  border: 10px solid #333;
+  background-origin: content-box;
+  padding: 30px;
+}
+
+/* ===============================
+   9️⃣ BACKGROUND-SHORTHAND
+   =============================== */
+.shorthand-simple {
+  background: lightblue url('https://picsum.photos/200/150') center/cover no-repeat;
+}
+.shorthand-full {
+  background: #ffcc99 url('https://picsum.photos/200/150') no-repeat center/contain fixed border-box content-box;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎨 Complete CSS Background Properties with All Values</h1>
+
+<!-- 1️⃣ BACKGROUND-COLOR -->
+<h2>1️⃣ background-color</h2>
+<div class="box color-named">Named (lightblue)</div>
+<div class="box color-hex">HEX (#ff9999)</div>
+<div class="box color-rgb">RGB (255,200,100)</div>
+<div class="box color-hsl">HSL (120,60%,70%)</div>
+<div class="box color-transparent">Transparent</div>
+
+<!-- 2️⃣ BACKGROUND-IMAGE -->
+<h2>2️⃣ background-image</h2>
+<div class="box image-single">Single image</div>
+<div class="box image-multiple">Multiple images</div>
+<div class="box image-gradient">Gradient</div>
+
+<!-- 3️⃣ BACKGROUND-REPEAT -->
+<h2>3️⃣ background-repeat</h2>
+<div class="box repeat-repeat">repeat</div>
+<div class="box repeat-x">repeat-x</div>
+<div class="box repeat-y">repeat-y</div>
+<div class="box no-repeat">no-repeat</div>
+<div class="box repeat-space">space</div>
+<div class="box repeat-round">round</div>
+
+<!-- 4️⃣ BACKGROUND-SIZE -->
+<h2>4️⃣ background-size</h2>
+<div class="box size-auto">auto</div>
+<div class="box size-cover">cover</div>
+<div class="box size-contain">contain</div>
+<div class="box size-fixed">100px 100px</div>
+<div class="box size-percentage">50% 50%</div>
+
+<!-- 5️⃣ BACKGROUND-POSITION -->
+<h2>5️⃣ background-position</h2>
+<div class="box position-center">center</div>
+<div class="box position-top-left">top left</div>
+<div class="box position-top-right">top right</div>
+<div class="box position-bottom-left">bottom left</div>
+<div class="box position-bottom-right">bottom right</div>
+<div class="box position-custom">30px 50px</div>
+
+<!-- 6️⃣ BACKGROUND-ATTACHMENT -->
+<h2>6️⃣ background-attachment</h2>
+<div class="box attachment-scroll">scroll</div>
+<div class="box attachment-fixed">fixed (scroll page to see)</div>
+<div class="box attachment-local">local<br>(scroll inside box)<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ducimus.</div>
+
+<!-- 7️⃣ BACKGROUND-CLIP -->
+<h2>7️⃣ background-clip</h2>
+<div class="box clip-border">border-box</div>
+<div class="box clip-padding">padding-box</div>
+<div class="box clip-content">content-box</div>
+
+<!-- 8️⃣ BACKGROUND-ORIGIN -->
+<h2>8️⃣ background-origin</h2>
+<div class="box origin-border">border-box</div>
+<div class="box origin-padding">padding-box</div>
+<div class="box origin-content">content-box</div>
+
+<!-- 9️⃣ BACKGROUND-SHORTHAND -->
+<h2>9️⃣ background (shorthand)</h2>
+<div class="box shorthand-simple">simple shorthand</div>
+<div class="box shorthand-full">full shorthand</div>
+
+</body>
+</html>
