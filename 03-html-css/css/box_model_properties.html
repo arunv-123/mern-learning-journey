@@ -1,0 +1,110 @@
+<!-- 
++-----------------------------+
+|         Margin              |  ← Outside space
+|  +-----------------------+  |
+|  |       Border          |  |  ← Border line
+|  |  +-----------------+  |  |
+|  |  |    Padding      |  |  |  ← Inner spacing
+|  |  | +-------------+ |  |  |
+|  |  | |  Content    | |  |  |  ← Actual text/image
+|  |  | +-------------+ |  |  |
+|  |  +-----------------+  |  |
+|  +-----------------------+  |
++-----------------------------+
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Box Model Demo</title>
+
+<style>
+  /* Apply border-box globally (recommended modern layout practice) */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .box {
+    /* CONTENT AREA */
+    width: 250px;
+    height: 100px;
+    background-color: lightyellow;
+    color: black;
+    text-align: center;
+    line-height: 100px; /* vertically center text */
+
+    /* PADDING (inside spacing) */
+    padding: 20px;
+
+    /* BORDER (line around padding + content) */
+    border: 5px solid #4CAF50; /* green border */
+
+    /* MARGIN (space outside border) */
+    margin: 40px auto;
+
+    /* BOX SHADOW (visual only, doesn’t affect layout) */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+
+    /* To visualize overflow behavior */
+    overflow: auto;
+
+    /* Optional rounded corners */
+    border-radius: 10px;
+  }
+
+  .label {
+    text-align: center;
+    margin-top: -20px;
+    font-weight: bold;
+  }
+
+  .explanation {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 5px solid #4CAF50;
+  }
+</style>
+</head>
+<body>
+
+  <h1>CSS Box Model Demonstration</h1>
+
+  <!-- Box with content, padding, border, margin -->
+  <div class="box">
+    🌼 Content Area
+  </div>
+  <div class="label">← Margin → (outside space)</div>
+
+  <div class="explanation">
+    <h2>🔍 Box Model Breakdown</h2>
+    <ul>
+      <li><b>Content:</b> The yellow area — holds the actual text or image.</li>
+      <li><b>Padding:</b> Space between the content and the green border (inside the box).</li>
+      <li><b>Border:</b> The green outline around the box.</li>
+      <li><b>Margin:</b> The grey space outside the box separating it from other elements.</li>
+      <li><b>Box-sizing:</b> Set to <code>border-box</code>, so total width = 250px (content + padding + border).</li>
+      <li><b>Overflow:</b> If content exceeds height/width, scrollbars appear.</li>
+      <li><b>Box-shadow:</b> Adds a shadow for visual depth, doesn’t affect layout size.</li>
+      <li><b>Border-radius:</b> Rounds the corners of the border box.</li>
+    </ul>
+  </div>
+
+  <div class="explanation">
+    <h2>🧠 Quick Recap</h2>
+    <pre>
+Total Element Width (content-box) = content + padding + border
+Total Element Width (border-box)  = fixed width (includes all)
+    </pre>
+  </div>
+
+</body>
+</html>
