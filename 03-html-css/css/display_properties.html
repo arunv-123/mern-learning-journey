@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Display Property Examples</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* ----------------------------
+   COMMON BOX STYLE
+   ---------------------------- */
+.box {
+  border: 2px solid #333;
+  background-color: lightblue;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+}
+
+/* =============================
+   1️⃣ display: block
+   ----------------------------- */
+.block-box {
+  display: block; /* full width, starts on new line */
+  width: 200px;
+  height: 80px;
+}
+
+/* =============================
+   2️⃣ display: inline
+   ----------------------------- */
+.inline-box {
+  display: inline; /* width = content, stays on same line */
+  background-color: yellow;
+  padding: 5px;
+}
+
+/* =============================
+   3️⃣ display: inline-block
+   ----------------------------- */
+.inline-block-box {
+  display: inline-block; /* inline + can set width/height */
+  width: 100px;
+  height: 50px;
+  background-color: coral;
+  color: white;
+  line-height: 50px;
+}
+
+/* =============================
+   4️⃣ display: none
+   ----------------------------- */
+.none-box {
+  display: none; /* element hidden completely */
+}
+
+/* =============================
+   5️⃣ display: flex
+   ----------------------------- */
+.flex-container {
+  display: flex; /* flex container, children are flex items */
+  justify-content: space-around; /* horizontal alignment */
+  align-items: center; /* vertical alignment */
+  background-color: lightgray;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.flex-item {
+  background-color: lightgreen;
+  padding: 20px;
+}
+
+/* =============================
+   6️⃣ display: grid
+   ----------------------------- */
+.grid-container {
+  display: grid; /* grid container */
+  grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+.grid-item {
+  background-color: lightcoral;
+  padding: 20px;
+  text-align: center;
+}
+
+/* =============================
+   7️⃣ display: inline-flex
+   ----------------------------- */
+.inline-flex-container {
+  display: inline-flex; /* flex container but inline */
+  gap: 10px;
+  background-color: lightyellow;
+  padding: 10px;
+}
+.inline-flex-item {
+  background-color: orange;
+  padding: 10px;
+  color: white;
+}
+
+/* =============================
+   8️⃣ display: inline-grid
+   ----------------------------- */
+.inline-grid-container {
+  display: inline-grid; /* grid container but inline */
+  grid-template-columns: auto auto;
+  gap: 5px;
+  background-color: lightpink;
+  padding: 5px;
+}
+.inline-grid-item {
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS Display Property Examples</h1>
+
+<!-- 1️⃣ Block -->
+<h2>1️⃣ display: block</h2>
+<div class="box block-box">Block Element 1</div>
+<div class="box block-box">Block Element 2</div>
+<!-- Each starts on a new line, full width -->
+
+<!-- 2️⃣ Inline -->
+<h2>2️⃣ display: inline</h2>
+<span class="inline-box">Inline 1</span>
+<span class="inline-box">Inline 2</span>
+<span class="inline-box">Inline 3</span>
+<!-- Stays in the same line, width = content -->
+
+<!-- 3️⃣ Inline-block -->
+<h2>3️⃣ display: inline-block</h2>
+<div class="inline-block-box">Box 1</div>
+<div class="inline-block-box">Box 2</div>
+<div class="inline-block-box">Box 3</div>
+<!-- Stays inline but width/height can be set -->
+
+<!-- 4️⃣ None -->
+<h2>4️⃣ display: none</h2>
+<div class="box none-box">You can't see me!</div>
+<p>This paragraph appears right after the hidden div.</p>
+
+<!-- 5️⃣ Flex -->
+<h2>5️⃣ display: flex</h2>
+<div class="flex-container">
+  <div class="flex-item">Flex 1</div>
+  <div class="flex-item">Flex 2</div>
+  <div class="flex-item">Flex 3</div>
+</div>
+<!-- Children arranged in a horizontal row, spaced evenly -->
+
+<!-- 6️⃣ Grid -->
+<h2>6️⃣ display: grid</h2>
+<div class="grid-container">
+  <div class="grid-item">Grid 1</div>
+  <div class="grid-item">Grid 2</div>
+  <div class="grid-item">Grid 3</div>
+</div>
+<!-- Children arranged in 3 columns, with gaps -->
+
+<!-- 7️⃣ Inline-flex -->
+<h2>7️⃣ display: inline-flex</h2>
+<p>Text before inline-flex
+<span class="inline-flex-container">
+  <span class="inline-flex-item">A</span>
+  <span class="inline-flex-item">B</span>
+  <span class="inline-flex-item">C</span>
+</span>
+Text after inline-flex.</p>
+<!-- The flex container stays inline with text -->
+
+<!-- 8️⃣ Inline-grid -->
+<h2>8️⃣ display: inline-grid</h2>
+<p>Inline grid example:
+<span class="inline-grid-container">
+  <span class="inline-grid-item">1</span>
+  <span class="inline-grid-item">2</span>
+</span>
+inside a sentence.
+</p>
+<!-- The grid container stays inline, 2 small boxes side by side -->
+
+</body>
+</html>
