@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Float & Clear Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #d33;
+    }
+
+    /* Common box style */
+    .box {
+      width: 120px;
+      height: 120px;
+      color: white;
+      text-align: center;
+      line-height: 120px;
+      margin: 10px;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .left {
+      float: left;
+      background-color: coral;
+    }
+
+    .right {
+      float: right;
+      background-color: teal;
+    }
+
+    /* To show container collapse issue */
+    .container {
+      background-color: lightgray;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* Fix container collapse using overflow */
+    .fixed-container {
+      background-color: lightgray;
+      padding: 10px;
+      margin-top: 20px;
+      overflow: auto; /* ✅ Keeps the floated elements inside */
+    }
+
+    /* Clearfix example */
+    .clearfix {
+      clear: both; /* ✅ Stops wrapping; pushes next element below floats */
+    }
+
+    .two-column {
+      background-color: #fffbe7;
+      border: 2px solid #ddd;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .column {
+      width: 48%;
+      height: 100px;
+      float: left;
+      margin: 1%;
+      text-align: center;
+      line-height: 100px;
+      background-color: lightblue;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧭 CSS Float & Clear Property - Full Demo</h1>
+
+  <!-- Example 1: Basic float usage -->
+  <h2>🔹 Example 1: Floating an image left</h2>
+  <img src="https://via.placeholder.com/100" style="float:left; margin-right:10px; border-radius:5px;">
+  <p>
+    This paragraph wraps around the floated image.
+    The image “floats” to the left, and the text fills in the space to the right of it.
+    This is exactly how newspapers or blog layouts used to align images beside text.
+  </p>
+  <div class="clearfix"></div> <!-- Clear float so next section starts below -->
+
+  <!-- Example 2: Left & right float -->
+  <h2>🔹 Example 2: Float left and right</h2>
+  <div class="box left">Left</div>
+  <div class="box right">Right</div>
+  <p>
+    These boxes are floated to opposite sides of the page.  
+    Notice how the text wraps between them, filling the gap.
+  </p>
+  <div class="clearfix"></div>
+
+  <!-- Example 3: Container collapse problem -->
+  <h2>🔹 Example 3: Container collapse issue</h2>
+  <div class="container">
+    <div class="box left">Box 1</div>
+    <div class="box left">Box 2</div>
+  </div>
+  <p>
+    ⚠️ Notice: The gray background of the container seems to “collapse” —  
+    it doesn’t wrap around the floated boxes!  
+    This happens because floated elements are **removed from normal flow**.
+  </p>
+
+  <!-- Example 4: Fixed using overflow or clearfix -->
+  <h2>🔹 Example 4: Fixing container collapse</h2>
+  <div class="fixed-container">
+    <div class="box left">Box 1</div>
+    <div class="box left">Box 2</div>
+  </div>
+  <p>✅ The container now includes the floated boxes, thanks to <code>overflow: auto;</code></p>
+
+  <!-- Example 5: Using clear -->
+  <h2>🔹 Example 5: The clear property</h2>
+  <div class="box left">Float Box</div>
+  <p>This text will wrap beside the floated box.</p>
+  <p class="clearfix">✅ This paragraph uses <code>clear: both;</code>, so it appears completely below the float.</p>
+
+  <!-- Example 6: Old 2-column layout using float -->
+  <h2>🔹 Example 6: 2-column layout (old method using float)</h2>
+  <div class="two-column">
+    <div class="column">Left Column</div>
+    <div class="column" style="float:right;">Right Column</div>
+    <div class="clearfix"></div>
+  </div>
+  <p>
+    This was how developers created column layouts before Flexbox and Grid existed.
+    Each column was floated left or right, and a <code>clear: both</code> was used to fix layout flow.
+  </p>
+
+</body>
+</html>
