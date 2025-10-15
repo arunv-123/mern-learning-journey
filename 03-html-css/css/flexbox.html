@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Flexbox Full Example</title>
+<style>
+/* 🎯 Flex Container */
+.flex-container {
+  display: flex;                 /* enable flexbox */
+  flex-direction: row;           /* horizontal layout */
+  flex-wrap: wrap;               /* wrap if needed */
+  justify-content: space-around; /* distribute evenly */
+  align-items: center;           /* vertically align in cross axis */
+  align-content: space-between;  /* between rows (when wrapped) */
+  gap: 15px;                     /* spacing between items */
+  background: #eef;
+  padding: 20px;
+  height: 300px;
+  border: 2px solid gray;
+}
+
+/* 🧱 Flex Items */
+.flex-container div {
+  background: lightcoral;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  flex-grow: 1;   /* expand equally */
+  flex-basis: 100px; /* starting width */
+  border-radius: 8px;
+}
+
+/* 🔢 Change order of one item */
+.item3 { order: -1; background: lightseagreen; }
+
+/* 🧭 align-self example */
+.item5 { align-self: flex-end; background: lightskyblue; }
+
+/* 🎯 Centering Example */
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 40px;
+  background: #ccc;
+  border: 2px dashed black;
+  font-size: 24px;
+}
+</style>
+</head>
+<body>
+
+<h2>🎨 Flexbox Full Demo</h2>
+<div class="flex-container">
+  <div class="item1">1️⃣ Box 1</div>
+  <div class="item2">2️⃣ Box 2</div>
+  <div class="item3">3️⃣ (Order changed)</div>
+  <div class="item4">4️⃣ Box 4</div>
+  <div class="item5">5️⃣ Align-self end</div>
+  <div class="item6">6️⃣ Box 6</div>
+</div>
+
+<h2>🎯 Centering with Flexbox</h2>
+<div class="center-box">
+  Centered Content
+</div>
+
+</body>
+</html>
