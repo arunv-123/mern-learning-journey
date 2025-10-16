@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Visibility Property Demo</title>
+  <style>
+    /* 💡 Common styling for all boxes */
+    .box {
+      background-color: lightcoral;
+      padding: 10px;
+      margin: 8px 0;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    /* 🔹 Hidden using visibility */
+    .hidden-box {
+      visibility: hidden; /* ❗ Invisible, but still takes up space */
+    }
+
+    /* 🔹 Completely removed using display */
+    .none-box {
+      display: none; /* ❗ Invisible AND does NOT take up space */
+    }
+
+    /* 🔹 For table example */
+    table {
+      width: 60%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    td {
+      border: 2px solid gray;
+      padding: 8px;
+      text-align: center;
+    }
+    .collapsed-row {
+      visibility: collapse; /* ❗ Works only for table rows/columns */
+    }
+
+    /* Just for visibility demonstration background */
+    body {
+      background-color: #fdf4f4;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #d33;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔹 Example 1: visibility: visible (default)</h2>
+  <!-- ✅ The element is fully visible -->
+  <div class="box" style="visibility: visible;">Box 1 - visibility: visible</div>
+
+  <h2>🔹 Example 2: visibility: hidden</h2>
+  <!-- ❗ Hidden but still takes up space in the layout -->
+  <div class="box hidden-box">Box 2 - visibility: hidden</div>
+
+  <p>👉 Notice: Even though Box 2 is invisible, there’s still blank space where it should be!</p>
+
+  <h2>🔹 Example 3: display: none</h2>
+  <!-- ❗ Completely removed from the layout -->
+  <div class="box none-box">Box 3 - display: none</div>
+
+  <p>👉 Box 3 is gone completely. The next box moves up, filling its space.</p>
+
+  <h2>🔹 Example 4: visibility: collapse (for table rows)</h2>
+  <!-- Works only for <tr> or <col> elements -->
+  <table>
+    <tr><td>Row 1 - visible</td></tr>
+    <tr class="collapsed-row"><td>Row 2 - visibility: collapse</td></tr>
+    <tr><td>Row 3 - visible</td></tr>
+  </table>
+
+  <p>👉 In this table, Row 2 is collapsed — you’ll only see Row 1 and Row 3 touching each other.</p>
+
+  <h2>🔹 Example 5: Side-by-side comparison</h2>
+  <div class="box">Box A - Normal</div>
+  <div class="box hidden-box">Box B - visibility: hidden</div>
+  <div class="box none-box">Box C - display: none</div>
+  <div class="box">Box D - Normal</div>
+
+  <p>👉 You’ll see: between A and D, there’s a space for B (hidden box), but not for C (display: none).</p>
+
+</body>
+</html>

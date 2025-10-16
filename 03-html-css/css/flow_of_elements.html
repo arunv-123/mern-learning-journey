@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow of Elements in CSS</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* -----------------------------------
+   SECTION 1️⃣: NORMAL FLOW
+----------------------------------- */
+
+/* Block elements start on a new line and take full width */
+.block {
+  background-color: lightblue;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+}
+
+/* Inline elements stay in same line, width = content */
+.inline {
+  display: inline;
+  background-color: yellow;
+  border: 1px solid #333;
+  padding: 5px;
+}
+
+/* -----------------------------------
+   SECTION 2️⃣: POSITION (OUT OF FLOW)
+----------------------------------- */
+
+.parent {
+  position: relative; /* acts as reference for absolute child */
+  background-color: #f0f0f0;
+  height: 180px;
+  margin-top: 20px;
+  border: 2px solid black;
+}
+
+/* Absolute removes element from normal flow */
+.absolute-box {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background-color: coral;
+  color: white;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+}
+
+/* Fixed removes from flow, positioned to viewport */
+.fixed-box {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: lightgreen;
+  border: 2px solid green;
+  padding: 10px;
+  z-index: 1000;
+}
+
+/* Sticky sticks inside scrollable parent */
+.scroll-container {
+  height: 150px;
+  overflow: auto;
+  border: 2px solid #555;
+  margin-top: 20px;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* -----------------------------------
+   SECTION 3️⃣: FLOATING ELEMENTS
+----------------------------------- */
+
+/* Floated element removed from normal block flow */
+.floated-img {
+  float: left;
+  margin-right: 10px;
+  border: 2px solid #333;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both; /* forces next content below floated item */
+}
+
+/* Styling paragraphs for clarity */
+p {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+<h1>2️⃣ Flow of Elements in CSS</h1>
+
+<!-- =============================
+     SECTION 1️⃣: NORMAL FLOW
+============================= -->
+<h2>1️⃣ Normal Flow</h2>
+<div class="block">Block 1 - starts on a new line</div>
+<div class="block">Block 2 - appears below Block 1</div>
+
+<p>
+  <span class="inline">Inline 1</span>
+  <span class="inline">Inline 2</span>
+  <span class="inline">Inline 3</span>
+</p>
+<!-- Inline elements sit side by side, not new lines -->
+
+<hr>
+
+<!-- =============================
+     SECTION 2️⃣: POSITION
+============================= -->
+<h2>2️⃣ Out-of-Flow Elements (Using Position)</h2>
+
+<div class="parent">
+  Parent Box (position: relative)
+  <div class="absolute-box">Absolute</div>
+</div>
+<!-- Absolute element is placed relative to parent, removed from flow -->
+
+<div class="fixed-box">Fixed Box</div>
+<!-- Fixed element sticks to top-right corner of viewport -->
+
+<div class="scroll-container">
+  <div class="sticky-header">Sticky Header</div>
+  <p>Scroll inside this box...</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, beatae, quas veniam ab officiis accusamus placeat perspiciatis reprehenderit necessitatibus hic?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, dolorum!</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, qui!</p>
+</div>
+<!-- Sticky header stays at top of this scrollable box -->
+
+<hr>
+
+<!-- =============================
+     SECTION 3️⃣: FLOATING ELEMENTS
+============================= -->
+<h2>3️⃣ Floating Elements</h2>
+
+<div class="clearfix">
+  <img src="https://picsum.photos/120" alt="Sample" class="floated-img">
+  <p>
+    This image is floated to the left using <code>float: left;</code>.
+    Text wraps around the image automatically.
+    Floated elements are removed from the normal flow, so other block elements behave as if the floated item isn’t there.
+  </p>
+</div>
+
+<p>Next paragraph appears below because of clearfix.</p>
+
+<hr>
+
+<h3>✅ Summary:</h3>
+<ul>
+  <li><strong>Normal Flow:</strong> Default layout (block & inline elements)</li>
+  <li><strong>Absolute / Fixed:</strong> Removed from flow, positioned freely</li>
+  <li><strong>Sticky:</strong> Acts like relative, then fixes during scroll</li>
+  <li><strong>Float:</strong> Removed from block flow, text wraps around</li>
+</ul>
+
+</body>
+</html>
