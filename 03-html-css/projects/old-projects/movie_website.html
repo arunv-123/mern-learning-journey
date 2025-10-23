@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineMood</title>
+    <link rel="icon" type="image/jpg" href="film_189441.png">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #f9c74f;
+      }
+      nav a {
+        color: #fff;
+        margin-left: 20px;
+        font-size: 16px;
+      }
+      nav a:hover {
+        color: #f9c74f;
+      }
+
+      .hero {
+        height: 72vh;
+        background: url("Watch-Free-Hero-2048x1152-1.png") center/cover
+          no-repeat;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        position: relative;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.6),
+          transparent 40%
+        );
+      }
+
+      .hero .overlay {
+        position: relative;
+        z-index: 1;
+      }
+      .hero .overlay h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      .cta-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #f9c74f;
+        color: #000;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .mood-selector {
+        padding: 40px;
+        text-align: center;
+      }
+      .mood-selector h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #f2f1ee;
+      }
+      .mood-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .mood-btn {
+        padding: 15px 30px;
+        background: #222;
+        border-radius: 30px;
+        font-size: 18px;
+        color: #fff;
+        transition: all 0.3s;
+      }
+      .mood-btn:hover {
+        background: #fff;
+        color: #000;
+        transform: scale(1.1);
+      }
+      .mood {
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 5px;
+        border-radius: 20px;
+        background: #f0f0f0;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .chill:hover::after {
+        content: " 😌";
+      }
+
+      .romantic:hover::after {
+        content: " ❤️";
+      }
+
+      .thriller:hover::after {
+        content: " 😱";
+      }
+
+      .comedy:hover::after {
+        content: " 😂";
+      }
+
+      .category {
+        padding: 40px;
+        text-align: center;
+      }
+      .category h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #fffefd;
+      }
+      .movie-row {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding-bottom: 10px;
+      }
+      .movie-card {
+        min-width: 150px;
+        flex-shrink: 0;
+        transition: transform 0.3s;
+      }
+      .movie-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .movie-card p {
+        text-align: center;
+        margin-top: 8px;
+        font-size: 14px;
+      }
+      .movie-card:hover {
+        transform: scale(1.07);
+      }
+
+      footer {
+        background: #000;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 14px;
+        color: #888;
+      }
+      .footer-links a {
+        color: #888;
+        margin: 0 5px;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      .footer-links a:hover {
+        color: #f9c74f;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">CineMood</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+        <a href="#">Mood🎭</a>
+        <a href="#">Categories</a>
+        <a href="#">Sign In</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="overlay">
+        <h1>Watch Free Movies and TV</h1>
+        <a href="#" class="cta-btn">Start Watching</a>
+      </div>
+    </section>
+
+    <section class="mood-selector">
+      <h2>Browse by Mood</h2>
+      <div class="mood-buttons">
+        <a href="#" class="mood-btn chill">Chill</a>
+        <a href="#" class="mood-btn romantic">Romantic</a>
+        <a href="#" class="mood-btn thriller">Thriller</a>
+        <a href="#" class="mood-btn comedy">Comedy</a>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Trending Now</h2>
+      <div class="movie-row">
+        <div class="movie-card">
+          <img src="HD-wallpaper-interstellar-2014-movie-poster.jpg" alt="" />
+          <p>Interstellar</p>
+        </div>
+        <div class="movie-card">
+          <img
+            src="small-hollywood-movie-poster-blade-runner-2049-ridley-scott-original-imaf3qvx88xenydd.webp"
+            alt=""
+          />
+          <p>Blade Runner 2049</p>
+        </div>
+        <div class="movie-card">
+          <img src="bullet-train-md-web.jpg" alt="" />
+          <p>Bullet Train</p>
+        </div>
+        <div class="movie-card">
+          <img
+            src="MV5BNWVkY2NlNmEtNzU3Mi00Njc0LWJiNjMtNzU5ZTdhZTAzZmU3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            alt=""
+          />
+          <p>A Dog's Journey</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Action Movies</h2>
+      <div class="movie-row">
+        <div class="movie-card">
+          <img src="81yqeOUaKPL._UF894,1000_QL80_.jpg" alt="" />
+          <p>John Wick 2</p>
+        </div>
+        <div class="movie-card">
+          <img src="81KJ-sK0YpS.jpg" alt="" />
+          <p>Avengers: Endgame</p>
+        </div>
+        <div class="movie-card">
+          <img src="a87fe37cec89d7bcef0a77b8caf8f3c4.jpg" alt="" />
+          <p>Mad Max: Fury Road</p>
+        </div>
+        <div class="movie-card">
+          <img src="411drGDDaPL._UF894,1000_QL80_.jpg" alt="" />
+          <p>Extraction</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Romance Movies</h2>
+      <div class="movie-row">
+        <div class="movie-card">
+          <img src="MOV415039__13288.jpg" alt="" />
+          <p>The Notebook</p>
+        </div>
+        <div class="movie-card">
+          <img
+            src="633fff7eebdb4e578700de83-la-la-land-movie-poster-24-x-36-inches.jpg"
+            alt=""
+          />
+          <p>La La Land</p>
+        </div>
+        <div class="movie-card">
+          <img src="1c12c51f48881fe75c5af997c3658016.jpg" alt="" />
+          <p>Titanic</p>
+        </div>
+        <div class="movie-card">
+          <img
+            src="Drive-RyanGosling-HollywoodEnglishActionMovie2011Poster_dbe0fe13-0c94-4126-8be2-ed9bbff39999.webp"
+            alt=""
+          />
+          <p>Drive</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 CineMood. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+      </div>
+    </footer>
+  </body>
+</html>
