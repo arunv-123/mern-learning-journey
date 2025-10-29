@@ -30,10 +30,7 @@
       nav {
         width: 100%;
         height: auto;
-        padding-top: 60px;
-        padding-right: 80px;
-        padding-bottom: 30px;
-        padding-left: 80px;
+        padding: 60px 5% 30px 5.2%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -41,7 +38,7 @@
       .nav-logo a {
         font-family: "Rethink Sans";
         font-weight: 800;
-        font-size: 36px;
+        font-size: clamp(1.8rem, 3vw, 2.25rem); /* ~36px */
         letter-spacing: 1.4px;
         line-height: 1;
         text-decoration: none;
@@ -50,7 +47,9 @@
       .nav-right {
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
       .nav-links {
         display: flex;
@@ -60,7 +59,7 @@
       .nav-links a {
         font-family: "Poppins", sans-serif;
         font-weight: 400;
-        font-size: 22px;
+        font-size: clamp(0.9rem, 1.2vw, 1.375rem); /* ~22px */
         line-height: 1;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.8);
@@ -74,7 +73,8 @@
         align-items: center;
       }
       .nav-search input {
-        width: 309px;
+        width: 100%;
+        max-width: 309px;
         height: 60px;
         border-radius: 263px;
         padding: 15px 20px 15px 60px;
@@ -119,11 +119,98 @@
         justify-content: center;
         align-items: center;
         font-weight: 600;
-        font-size: 24px;
+        font-size: clamp(1rem, 2vw, 1.5rem); /* ~24px */
         line-height: 1;
         color: rgba(255, 255, 255, 1);
         text-align: center;
         padding: 0 10px;
+      }
+      .hero {
+        position: relative;
+        width: 90%;
+        min-height: 60vh;
+        height: auto;
+        background: url("bab3135c7f2ed8a335cb9a00ac3c00ef33704e89.png")
+          center/cover no-repeat;
+        margin: 30px auto;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          rgba(0, 52, 75, 0.967),
+          rgba(30, 56, 68, 0.952),
+          rgba(9, 11, 12, 0.974)
+        );
+        z-index: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 80px;
+        margin-top: 55px;
+        max-width: 669px;
+        width: 80%;
+        gap: 7px;
+      }
+      .hero-title {
+        font-size: clamp(1.8rem, 4vw, 3rem); /* ~48px */
+
+        font-weight: 500;
+        line-height: 130%;
+      }
+      .hero-subtext {
+        max-width: 534px;
+        width: 80%;
+        font-size: clamp(1rem, 2.2vw, 1.5rem); /* ~24px */
+        font-weight: 500;
+        line-height: 135%;
+      }
+      .hero-btn {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+        margin-top: 40px;
+        width: 191px;
+        height: 64px;
+        border-radius: 6px;
+      }
+      .hero-images {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: min(40%, 400px);
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        z-index: 2;
+      }
+      .hero-images img {
+        position: absolute;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        max-width: 100%;
+        height: auto;
+      }
+      .hero-images .perfume-front {
+        right: 0;
+        max-height: 60%;
+        transform: rotate(10deg);
+        z-index: 2;
+      }
+      .hero-images .perfume-back {
+        max-height: 80%;
+        right: 80px;
+        transform: rotate(-10deg);
+        z-index: 1;
       }
     </style>
   </head>
@@ -155,8 +242,48 @@
     <div class="divider-banner">
       ENJOY FESTIVE DISCOUNTS! FREE SHIPPING ABOVE 999 !
     </div>
-    <section class="hero-section">
-        
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Discover perfumes that celebrate individuality
+          </h1>
+          <p class="hero-subtext">
+            Every moment with an unforgettable essence.
+          </p>
+          <button class="hero-btn">Shop Now</button>
+        </div>
+
+        <div class="hero-images">
+          <img
+            src="perfume_image_for_hero_section.png"
+            alt="Perfume bottle front"
+            class="perfume perfume-front"
+          />
+          <img
+            src="perfume_image_for_hero_section.png"
+            alt="Perfume bottle back"
+            class="perfume perfume-back"
+          />
+        </div>
+
+        <div class="hero-radio">
+          <input type="radio" name="slide" id="slide1" checked />
+          <input type="radio" name="slide" id="slide2" />
+        </div>
+
+        <div class="radio-buttons">
+          <label for="slide1"></label>
+          <label for="slide2"></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers">
+      <div class="card1">
+        <div class="text1">Unlock Exclusive Offers</div>
+        <div class="text2">Discover special deals just tailored for you</div>
+      </div>
     </section>
   </body>
 </html>
