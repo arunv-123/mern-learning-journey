@@ -1,0 +1,359 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: white;
+      }
+      nav {
+        position: sticky;
+        width: 100%;
+        height: auto;
+        padding: 60px 5% 30px 5.2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-logo a {
+        font-family: "Rethink Sans";
+        font-weight: 800;
+        font-size: clamp(1.8rem, 3vw, 2.25rem); /* ~36px */
+        letter-spacing: 1.4px;
+        line-height: 1;
+        text-decoration: none;
+        color: rgba(0, 53, 75, 1);
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      .nav-links a {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.9rem, 1.2vw, 1.375rem); /* ~22px */
+        line-height: 1;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.8);
+      }
+      .nav-links a.home {
+        font-weight: 600;
+      }
+      .nav-search {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .nav-search input {
+        width: 100%;
+        max-width: 309px;
+        height: 60px;
+        border-radius: 263px;
+        padding: 15px 20px 15px 60px;
+        border-style: none;
+        box-shadow: 0px 0px 8px 0px #00000040;
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1;
+      }
+      .nav-search input::placeholder {
+        color: rgba(0, 0, 0, 0.7);
+      }
+      .nav-search i {
+        position: absolute;
+        left: 25px;
+        font-size: 20px;
+      }
+      .nav-icons {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .nav-icons i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        padding: 12.86px 18px;
+        border-radius: 225.43px;
+        box-shadow: 0px 0px 6.86px 0px rgba(0, 0, 0, 0.25);
+        font-size: 20px;
+      }
+            .divider-banner {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        background-color: rgba(0, 53, 75, 1);
+        opacity: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: clamp(1rem, 2vw, 1.5rem); /* ~24px */
+        line-height: 1;
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        padding: 0 10px;
+      }
+      .all-products {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 50px;
+        align-items: center;
+      }
+     
+      .all-product-heading h2{
+        font-size: 48px;
+      }
+      .all-product-heading a {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+      }
+      .sortby-section {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+      .sortby-section a {
+        text-decoration: none;
+        color: black;
+      }
+      .relevance {
+        font-weight: 600;
+      }
+      .filter-btn button {
+        width: 200px;
+        height: 62px;
+        border-radius: 50px;
+        border: solid 2px black;
+        font-size: 20px;
+        font-family: "Poppins", sans-serif;
+    }
+    .filter-btn img {
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+    .product-cards {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px;
+        justify-content: center;
+        align-items: center;
+        column-gap: 50px;
+        row-gap: 70px;
+    }
+    .product {
+        height: auto;
+        width: 440px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    .image-portion {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 130px;
+        border-bottom-right-radius: 130px;        
+        height: 60%;
+        box-shadow:0 0 10px #00000040;
+    }
+    .image-portion img {
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+    }
+    .product img {
+        align-items: center;
+    }
+    .product-content {
+        margin: 20px;
+        line-height: 190%;
+    } 
+    .strike {
+        margin-left: 5%;
+        text-decoration: line-through;
+        font-size: 13px;
+        color: grey;
+    }
+    .product-btn button {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        background: rgba(0, 53, 75, 1);
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+    }
+    .load-more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .load-more button{
+      width: 300px;
+      height: 72px;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(1.4rem, 1.5rem, 1.6rem);
+      font-family: "Poppins", sans-serif;
+      border-radius: 4px;
+      background: white;
+      border: solid 4px rgba(0, 53, 75, 1);
+      margin: 50px 0px 80px 0px;
+    }
+                footer {
+            background-color: #9EBFC5;
+            padding: 60px 80px 30px;
+            color: #1a1a1a;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 60px;
+        }
+
+        .brand {
+            flex: 1;
+        }
+
+        .brand h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1a3a4a;
+        }
+
+        .footer-column {
+            flex: 1;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            opacity: 0.7;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .social-media h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: black;
+        }
+
+        .social-icons a:hover {
+            background-color: #1a1a1a;
+        }
+
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+            fill: #1a1a1a;
+            transition: fill 0.3s;
+        }
+
+        .social-icons a:hover svg {
+            fill: #9EBFC5;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(26, 26, 26, 0.2);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-links span {
+            color: #1a1a1a;
+        }
+
+        .copyright {
+            color: #1a1a1a;
+        }
