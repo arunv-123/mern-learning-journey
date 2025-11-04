@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+}
+nav {
+  position: sticky;
+  width: 100%;
+  height: auto;
+  padding: 60px 5% 30px 5.2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo a {
+  font-family: "Rethink Sans";
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.25rem); /* ~36px */
+  letter-spacing: 1.4px;
+  line-height: 1;
+  text-decoration: none;
+  color: rgba(0, 53, 75, 1);
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.nav-links a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 1.2vw, 1.375rem); /* ~22px */
+  line-height: 1;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+.nav-links a.home {
+  font-weight: 600;
+}
+.nav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.nav-search input {
+  width: 100%;
+  max-width: 309px;
+  height: 60px;
+  border-radius: 263px;
+  padding: 15px 20px 15px 60px;
+  border-style: none;
+  box-shadow: 0px 0px 8px 0px #00000040;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+.nav-search input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+.nav-search i {
+  position: absolute;
+  left: 25px;
+  font-size: 20px;
+}
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-icons i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 12.86px 18px;
+  border-radius: 225.43px;
+  box-shadow: 0px 0px 6.86px 0px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+}
+.divider-banner {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 53, 75, 1);
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: clamp(1rem, 2vw, 1.5rem); /* ~24px */
+  line-height: 1;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  padding: 0 10px;
+}
+/* ---------------All Products----------------- */
+.all-products {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 90px;
+  gap: 50px;
+}
+.all-product-content a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+/* ---------------hero container----------------- */
+.product-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin: 20px 90px;
+    height: auto;
+}
+.product-gallery {
+  width: 2000px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-gallery-top {
+  display: flex;
+}
+.thumbnail-images {
+  width: 20%;
+}
+.thumbnail-images img{
+  width: 100%;
+  height: 100%;
+}
+.main-image-section {
+  width: 90%;
+  height: auto;
+  position: relative;
+}
+.main-image-section img {
+  width: 100%;
+  height: auto;
+}
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.action-buttons button {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(14px, 1vw + 0.25rem, 18px);
+  border-radius: 4px;
+  padding: 10px 0px;
+  font-weight: 600;
+}
+.action-buttons .purchase-btn {
+  background-color: rgba(0, 53, 75, 1);
+  color: white;
+}
+.action-buttons .add-btn {
+  background-color: #fff;
+}
+.quantity-selector {
+  border: solid 3px black;
+  width: 90px;
+  height: 35px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 700;
+}
+.minus {
+  font-size: 1.3rem;
+  border: none;
+  background-color: white;
+  font-weight: 500;
+}
+.plus {
+  font-size: 1.3rem;
+  font-weight: 500;
+  border: none;
+  background-color: white;
+}
+.delivery-info {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.offers i{
+  color: green;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.product-description {
+  margin-right: 60px;
+}
+.main-image-section .icon-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.icon1, .icon2{
+  font-size: 1.rem;
+  color: #0d1a26;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+/* Hover effect: subtle scale + color change */
+.icon1:hover, .icon2:hover {
+  background-color: grey;
+  transform: scale(1.1);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+/* ------------Footer------------------- */
+footer {
+  background-color: #9ebfc5;
+  padding: 60px 80px 30px;
+  color: #1a1a1a;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 60px;
+}
+
+.brand {
+  flex: 1;
+}
+
+.brand h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a3a4a;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 16px;
+  transition: opacity 0.3s;
+}
+
+.footer-column ul li a:hover {
+  opacity: 0.7;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.contact-item svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.social-media h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: black;
+}
+
+.social-icons a:hover {
+  background-color: #1a1a1a;
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: #1a1a1a;
+  transition: fill 0.3s;
+}
+
+.social-icons a:hover svg {
+  fill: #9ebfc5;
+}
+
+.footer-bottom {
+  border-top: 3px solid rgba(0, 0, 0, 0.2);
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  width: 100vw; /* full viewport width */
+  margin-left: calc(-80px); /* cancel the footer's left padding */
+  margin-right: calc(-80px); /* cancel the footer's right padding */
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  padding: 0px 80px 30px;
+  
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.footer-links span {
+  color: #1a1a1a;
+}
+
+.copyright {
+  padding: 0px 80px 30px;
+  color: #1a1a1a;
+}
