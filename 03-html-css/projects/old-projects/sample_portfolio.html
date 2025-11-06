@@ -1,73 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{background-color: rgba(116, 171, 229, 0.627);
-        background: url("1600w-drvq3zaYl2E.webp");
-    background-size: cover;}
-        h1{font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;color: #ffffff;
-;}
-    h2{
-        text-align: center;
-        color: rgb(255, 255, 255);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arun Babu V - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: rgba(116, 171, 229, 0.627) url("1600w-drvq3zaYl2E.webp") no-repeat center center/cover;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    p{
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: larger;
-        text-align: center;
-        
+    h1, h2, p, ul, form {
+      text-align: center;
+      color: #fff;
     }
- li{
-    text-align: center;
- }
-#skill{ text-align: center;
-color: black;}
-a{
-    text-align: center;
-}
-#work{
-    text-align: center;
-    color: black;
-}
-img{
-    
-    align-items: center;
-    width: 70%;
-    height: 50%;
-}
-form{
-    font-size: large;
-    color: #f4f1f1;
-    text-align: center;
-}
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      width: 70%;
+      height: auto;
+      border-radius: 10px;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input[type="tel"], input[type="submit"] {
+      padding: 8px;
+      margin-top: 10px;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      color: #fff;
+      text-decoration: underline;
+      text-align: center;
+    }
 
-    </style>
+    @media (max-width: 1024px) {
+      img {
+        width: 80%;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-position: top;
+      }
+      img {
+        width: 90%;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      p, li {
+        font-size: 0.95rem;
+      }
+      input[type="tel"], input[type="submit"] {
+        width: 80%;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        background-size: cover;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.1rem;
+      }
+      p, li {
+        font-size: 0.9rem;
+      }
+      img {
+        width: 95%;
+      }
+      input[type="tel"], input[type="submit"] {
+        width: 90%;
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1><u>ARUN BABU V</u></h1>
-    <h2><i>MERN Stack Developer</h2>
-    <p>I have done my graduation at<p><u>Madin Polytechnic College</u>, Malappuram </p></p>
-    <p>I'm currently pusruing MERN Stack Internship at Softroniics</p>
-    <h2 id="skill"><u>Skills</u></h2>
-    <p>
-        <ul>
-            <li>C</li>
-            <li>Java</li>
-            <li>Python</li>
-            <li>PHP</li>
-            <li>HTML</li>
-        </ul>
-    </p>
-    <h2 id="work"><u>Projects</u></h2>
-    <img src="How To Make User Interface (UI) Website Using HTML.jpg" alt="">
-    <img src="slides-html.jpg" alt="">
-    <form action="Submit">
-    <label for="text">Phone number:</label>
-    <a href="Linkedin.com">Contact Me on LinkedIn</a>
-</form>
+
+  <h1><u>ARUN BABU V</u></h1>
+  <h2><i>MERN Stack Developer</i></h2>
+  <p>I have done my graduation at <u>Madin Polytechnic College</u>, Malappuram.</p>
+  <p>I'm currently pursuing a MERN Stack Internship at Softroniics.</p>
+
+  <h2 class="skill"><u>Skills</u></h2>
+  <ul>
+    <li>C</li>
+    <li>Java</li>
+    <li>Python</li>
+    <li>PHP</li>
+    <li>HTML</li>
+  </ul>
+
+  <h2 class="work"><u>Projects</u></h2>
+  <img src="How To Make User Interface (UI) Website Using HTML.jpg" alt="UI Project Screenshot">
+  <img src="slides-html.jpg" alt="HTML Slides Project">
+
+  <form action="#" method="post">
+    <label for="phone">Phone number:</label><br>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <a href="https://linkedin.com/in/your-profile" target="_blank">Contact me on LinkedIn</a>
 </body>
 </html>

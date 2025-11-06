@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--tell the browser this is a html document-->
+<html lang="en">
+  <!--language = english-->
+  <head>
+    <!--contain page settings and styles-->
+    <meta charset="UTF-8" />
+    <!--let the browser display all text and symbols-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--This media tag is essential for media queries to work correctly on mobile-->
+    <title>Media Query</title>
+    <!--Set the page name shown on the browser tab-->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        line-height: 1.4;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: #f7fafb;
+        color: #111;
+        padding: 24px;
+      }
+      .card {
+        width: 100%;
+        max-width: 900px;
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 88px 30px rgba(16, 24, 40.06);
+        padding: 36px;
+        text-align: left;
+        transition: padding 0.25 ease, font-size 8.25 case;
+      }
+      h1 {
+        margin: 89 8px 8;
+        font-size: 28px;
+      }
+      p.lead {
+        margin-top: 0;
+        color: #444;
+      }
+      .about {
+        margin-top: 20px;
+        padding: 28px;
+        border-radius: 8px;
+        background: lightblue;
+        font-size: 18px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: red;
+      }
+
+      .about .name {
+        font-weight: 700;
+      }
+      .about .avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, fotoff, edBeoff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #1b4b7a;
+      }
+
+      
+    </style>
+    <!--where we write css directly in the html file or internal css-->
+  </head>
+  <body>
+    <!--Everything inside the body is visible on the website-->
+    <main class="card" role="main">
+      <!--Main container for our content, the class card is used to style it in css-->
+      <!--Role is the accessibility label that tells accessive tools this is the main content-->
+      <!--The main class = SEO or search engines understand what part of your page is important-->
+      <h1>Resposive media query demo</h1>
+      <p class="lead">
+        Resize the browser window or open this page on a phone/tablet to see the
+        styles change at different breakpoints
+      </p>
+      <!--The responsive box whose color or layout will be changed on different device-->
+      <div class="about" id="aboutBox">
+        <div>
+          <div class="name">Indulekha - UI/UX Teacher</div>
+          <div class="desc" style="color: #333">
+            I teach responsive design at PixelBloom. The box changes colour
+            padding and layout.
+          </div>
+          <div class="avatar" aria-hidden="true">PB</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

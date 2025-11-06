@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            background: green;
+            border: solid 2px black;
+            height: auto;
+            align-items: center;
+            margin: 50px;
+            padding: 50px;
+        }
+        * {
+            background: grey;
+            font-family: "Poppins", sans-serif;
+        }
+        h1, p{
+            text-align: center;
+            color: white;
+            padding: 40px;
+            background: rgb(8, 112, 144);
+        }
+
+        @media (min-width: 1025px)
+        {
+            * {
+                background: blue;
+            };
+            .main {
+                background: #1fa0b1;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width:1024px)
+        {
+            * {
+                background-color: blueviolet;
+            }
+            .main {
+                background-color: black;
+            }
+            h1, p {
+                color: rgb(230, 120, 120);
+            }
+        }
+        @media (max-width: 600px)
+        {
+            * {
+                background-color: chocolate;
+            }
+            .main {
+                background-color: burlywood;
+            }
+            h1, p {
+                color: brown;
+                background-color: cornflowerblue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+            <h1>Media Query</h1>
+            <p>Just Responsive Test</p>
+    </div>
+</body>
+</html>
