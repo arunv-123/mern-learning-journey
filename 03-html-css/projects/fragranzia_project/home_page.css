@@ -1,0 +1,434 @@
+:root {
+  --teal: #00354b;
+  --teal-dark: #002d3a;
+  --muted: #f5f5f5;
+  --light-trans: rgba(208, 207, 207, 0.45);
+  /* #D0CFCF74 */
+  --page-bg: #ffffff;
+  --card-radius: 15px;
+  --hero-radius: 20px;
+  --max-width: 1200px;
+  --container-padding: 5%;
+  --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--page-bg);
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+}
+
+/*-----------------------------------------Navbar------------------------------------*/
+header {
+  width: 100%;
+}
+
+nav {
+  position: sticky;
+  width: 100%;
+  height: auto;
+  padding: 60px 5% 30px 5.2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo a {
+  font-family: "Rethink Sans";
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.25rem);
+  /* ~36px */
+  letter-spacing: 1.4px;
+  line-height: 1;
+  text-decoration: none;
+  color: rgba(0, 53, 75, 1);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 1.2vw, 1.375rem);
+  /* ~22px */
+  line-height: 1;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-links a.home {
+  font-weight: 600;
+}
+
+.nav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-search input {
+  width: 100%;
+  max-width: 309px;
+  height: 60px;
+  border-radius: 263px;
+  padding: 15px 20px 15px 60px;
+  border-style: none;
+  box-shadow: 0px 0px 8px 0px #00000040;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.nav-search input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-search i {
+  position: absolute;
+  left: 25px;
+  font-size: 20px;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-icons i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 12.86px 18px;
+  border-radius: 225.43px;
+  box-shadow: 0px 0px 6.86px 0px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+}
+
+.divider-banner {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 53, 75, 1);
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  /* ~24px */
+  line-height: 1;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  padding: 0 10px;
+}
+
+/*-----------------------------------------------Hero Carousel------------------------------------------------------*/
+.hero {
+  width: 88.3vw;
+  margin: 30px auto;
+  height: 65vh;
+  min-height: 420px;
+  border-radius: var(--hero-radius);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hidden radios */
+.hero input[type="radio"] {
+  display: none;
+}
+
+/* slides wrapper */
+.hero-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+}
+
+/* Slide backgrounds - replace with your images */
+.slide.slide1 {
+  background-image: linear-gradient(rgba(0, 52, 75, 0.9), rgba(9, 11, 12, 0.9)),
+    url("bab3135c7f2ed8a335cb9a00ac3c00ef33704e89.png");
+}
+
+.slide.slide2 {
+  background-image: linear-gradient(
+      rgba(19, 63, 56, 0.895),
+      rgba(0, 0, 0, 0.949)
+    ),
+    url("bab3135c7f2ed8a335cb9a00ac3c00ef33704e89.png");
+}
+
+/* Show active slide when radio checked */
+#slide1:checked ~ .hero-slides .slide.slide1 {
+  opacity: 1;
+  z-index: 2;
+}
+
+#slide2:checked ~ .hero-slides .slide.slide2 {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* left content */
+.hero-content {
+  z-index: 3;
+  color: #fff;
+  max-width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  justify-content: center;
+  transform: translateY(-40px);
+}
+
+.hero-title {
+  font-family: "Rethink Sans", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  /* ~48px */
+  line-height: 1.12;
+  margin: 0;
+}
+
+.hero-subtext {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  /* ~24px */
+  color: rgba(255, 255, 255, 1);
+  margin: 0;
+  width: 80%;
+}
+
+.hero-btn {
+  margin-top: 8px;
+  background: #fff;
+  color: var(--teal);
+  border: none;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 0.8rem + 0.8vw, 1.125rem);
+  cursor: pointer;
+  width: fit-content;
+  box-shadow: var(--shadow-soft);
+  font-family: "Poppins";
+}
+
+/* hero images (right side overlapping bottles) */
+.hero-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 4;
+  pointer-events: none;
+  /* images decorative */
+}
+
+.hero-images img {
+  position: absolute;
+  bottom: 6%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.45));
+}
+
+/* front (larger) */
+.hero-images .perfume-front {
+  width: 25vw;
+  max-width: 420px;
+  left: 55%;
+  top: 15%;
+  transform: translateX(-50%) rotate(-15deg);
+  z-index: 2;
+}
+
+/* back (smaller) */
+.hero-images .perfume-back {
+  width: 22vw;
+  max-width: 300px;
+  left: 75%;
+  top: 33%;
+  transform: translateX(-50%) rotate(15deg);
+  z-index: 3;
+  opacity: 0.98;
+}
+
+/* carousel dots */
+.radio-buttons {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  gap: 10px;
+}
+
+.radio-buttons label {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.25s;
+}
+
+#slide1:checked ~ .radio-buttons label[for="slide1"],
+#slide2:checked ~ .radio-buttons label[for="slide2"] {
+  background: #fff;
+}
+
+.offers {
+  width: 88.3vw;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(231, 231, 231, 1);
+  height: 100%;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 12px;
+  padding-left: 30px;
+}
+
+.card2 {
+}
+
+.text-content {
+  width: 60%;
+  flex-direction: column;
+}
+
+.text-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.text-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.offers-image {
+  height: 100%;
+  width: 40%;
+}
+
+.offers-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/**------------------------------------3-Features-Container------------------------------------*/
+.features {
+  width: 90%;
+  margin: 62px auto;
+  max-width: var(--max-width);
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  transform: scale(1.13);
+  box-shadow: rgba(0, 0, 0, 0.25);
+  padding-block: 30px;
+}
+
+.feature {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex: 1;
+}
+
+.feature i {
+  background: var(--muted);
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 40px;
+  color: var(--teal);
+}
+
+.feature .ft-text {
+  font-size: 1rem;
+}
+
+.feature .ft-text p {
+  margin: 0;
+  color: #444;
+}
+
+.feature .ft-text small {
+  color: #777;
+  display: block;
+  margin-top: 4px;
+}
+
+/*-----------------------------------------Featured Collections-------------------------------------*/
