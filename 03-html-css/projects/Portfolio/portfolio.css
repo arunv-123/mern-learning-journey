@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+}
+.logo-container{
+    font-family: "Anton", sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    align-items: center;
+    background-color: white;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-family: "Archivo", sans-serif;
+    color: rgb(102, 102, 102);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    white-space-collapse: preserve;
+    align-items: center;
+}
+.nav-links button{
+    width: 100px;
+    height: 40px;
+    font-family: "Archivo", sans-serif;
+    color: rgb(204, 204, 204);
+    font-size: 16px;
+    font-weight: 500;
+    white-space-collapse: preserve;
+    background-color: black;
+    border-radius: 5px;
+}
+.hero {
+    height: 550px;
+    background: linear-gradient(rgb(246, 246, 246) 0%, rgb(246, 246, 246) 100%);
+    padding: 80px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 86px;
+    text-align: left;
+}
+.hero p {
+    font-family: "Archivo", sans-serif;
+    font-size: 24px;
+    color: rgb(102, 102, 102);
+}
+.hero-bio-pic {
+    object-fit: cover;
+    object-position: center top;
+    height: 130%;
+}
+.hero-bio-content {
+    margin-bottom: 90px;
+}
+.overview {
+    display: flex;
+}
+.explore {
+
+}
