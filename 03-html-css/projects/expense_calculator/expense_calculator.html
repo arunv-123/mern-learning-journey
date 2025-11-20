@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Expense Suite — United States</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fff6f7;               /* card light tint */
+      --soft-pink:#fdeff1;        /* page background */
+      --rose-600:#d32f2f;        /* primary */
+      --rose-700:#b71c1c;        /* darker */
+      --muted:#8b8b8b;
+      --card-border:#f3dede;
+      --card-shadow: 0 8px 18px rgba(19,18,18,0.04);
+      --card-radius:14px;
+      --ui-radius:10px;
+      --container:1200px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(243,203,208,0.25), transparent 12%),
+                  linear-gradient(180deg, #fff 0%, var(--soft-pink) 100%);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:64px;
+    }
+
+    /* Page container */
+    .wrap{
+      max-width:var(--container);
+      margin: 18px auto;
+      padding: 0 20px;
+    }
+
+    /* Top navbar */
+    .topbar{
+      background:#fff;
+      border-radius:12px;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      box-shadow: var(--card-shadow);
+      border:1px solid #fff0f0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:220px;
+    }
+
+    .flag{
+      font-size:20px;
+      width:40px;height:40px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(180deg,#fff,#fff0); box-shadow:0 2px 6px rgba(0,0,0,0.03)
+    }
+
+    .brand-text{line-height:1}
+    .brand-text .title{font-weight:700;color:var(--rose-600); font-size:16px}
+    .brand-text .subtitle{font-size:11px;color:var(--muted);font-weight:600;margin-top:2px}
+
+    .navlinks{
+      display:flex;
+      gap:18px;
+      margin-left:18px;
+      align-items:center;
+      flex:1;
+    }
+
+    .navlinks a{color:#6b6b6b;text-decoration:none;font-size:13px}
+    .navlinks select{
+      border:1px solid #eee;padding:6px 10px;border-radius:8px;font-size:13px;background:#fff
+    }
+
+    .cta{
+      display:flex;gap:10px;align-items:center;margin-left:auto;
+    }
+
+    .btn{
+      border-radius:10px;padding:8px 12px;border:none;font-weight:700;
+      cursor:pointer;font-size:13px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.03)
+    }
+
+    .btn-add{background:linear-gradient(180deg,var(--rose-600),var(--rose-700)); color:#fff}
+    .user{
+      display:flex;gap:10px;align-items:center;background:#fff;padding:6px;border-radius:10px;border:1px solid #fff0f0
+    }
+
+    .signed{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase}
+    .avatar{width:36px;height:36px;border-radius:50%;background:var(--rose-600);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+
+    .btn-logout{background:#fff;border:1px solid rgba(211,47,47,0.15);color:var(--rose-600);padding:6px 12px;border-radius:8px;font-weight:700}
+
+    /* Header banner */
+    .banner{
+      margin-top:18px;
+      background: linear-gradient(135deg,var(--rose-600), var(--rose-700));
+      border-radius:16px;
+      color:#fff;
+      padding:30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow: 0 18px 40px rgba(183,28,28,0.12);
+    }
+
+    .banner .label{font-size:12px; text-transform:uppercase; font-weight:700; opacity:0.95}
+    .banner h1{margin:6px 0 4px;font-size:34px;line-height:1;font-weight:800;letter-spacing:-0.02em}
+    .banner p{margin:0;color:rgba(255,255,255,0.95);font-weight:600}
+
+    .banner-actions{display:flex;gap:12px}
+    .action{
+      background:rgba(255,255,255,0.95);
+      color:var(--rose-700);
+      padding:10px 14px;border-radius:12px;border:none;font-weight:700;cursor:pointer;
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    /* Stats row */
+    .stats{
+      margin-top: 15px; /* pull up */
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .stat{
+      background:linear-gradient(180deg,#fff,#fff0);
+      padding:18px;border-radius:14px;border:1px solid var(--card-border);
+      box-shadow:var(--card-shadow);
+      display:flex;flex-direction:column;justify-content:center;
+      position:relative; overflow:hidden;
+    }
+
+    .stat .label{font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:0.7px}
+    .stat .value{font-size:24px;font-weight:800;margin-top:8px;color:#111}
+    .stat .desc{margin-top:8px;font-size:13px;color:#7a7a7a}
+
+    /* subtle diagonal highlight inside stat cards (approximation) */
+    .stat:after{
+      content:"";position:absolute;right:-10px;bottom:-40px;width:220px;height:220px;
+      background:linear-gradient(45deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+      transform:rotate(20deg);opacity:0.9;pointer-events:none;
+    }
+
+    /* Main grid */
+    .main-grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:22px;
+      align-items:start;
+    }
+
+    /* left column */
+    .left-col{display:flex;flex-direction:column;gap:18px}
+
+    .section-label{font-size:12px;color:var(--muted);text-transform:uppercase;font-weight:700;margin-bottom:8px;letter-spacing:0.7px}
+
+    .card{
+      background: #fff;border-radius:var(--card-radius);padding:18px;border:1px solid #f4e7e7;
+      box-shadow:0 12px 28px rgba(197,57,57,0.04)
+    }
+
+    .card .title{font-size:16px;font-weight:700;margin-bottom:12px;color:#222}
+
+    /* form */
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-field{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+    label{font-size:13px;color:#333;font-weight:600}
+    input[type="text"], input[type="number"], input[type="date"], select, textarea{
+      border:1px solid #ececec;padding:10px;border-radius:8px;font-size:14px;outline:none;font-family:inherit;
+      background: #fff;
+    }
+    textarea{min-height:100px;resize:vertical;padding-top:10px}
+    .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .btn-primary{background:linear-gradient(180deg,var(--rose-600),var(--rose-700));color:#fff;padding:12px;border-radius:10px;border:none;font-weight:800;cursor:pointer}
+    .btn-secondary{background:#fff;border:1px solid #f4dada;color:var(--rose-700);padding:12px;border-radius:10px;font-weight:700}
+
+    /* timeline table */
+    .legend{display:flex;gap:18px;margin-bottom:12px;align-items:center}
+    .legend .item{display:flex;gap:8px;align-items:center;color:#666;font-weight:600}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .dot.income{background:#4caf50}
+    .dot.exp{background:var(--rose-600)}
+
+    table.timeline{width:100%;border-collapse:collapse;font-size:14px}
+    table.timeline th{font-weight:700;text-align:left;padding:12px 8px;border-bottom:1px solid #f4f4f4;color:#444;font-size:13px}
+    table.timeline td{padding:12px 8px;border-bottom:1px solid #fbf0f0;color:#666}
+
+    .empty{padding:28px;text-align:center;color:#9a9a9a;font-size:14px}
+
+    /* right column */
+    .right-col{display:flex;flex-direction:column;gap:18px}
+    .filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+
+    .clear-btn{background:#fff;border:1px solid #eee;padding:8px 10px;border-radius:8px;font-weight:700;cursor:pointer;color:#666}
+
+    /* insights bottom area */
+    .insights-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .calc-display{background:#fff;border-radius:10px;padding:18px;font-size:28px;font-weight:800;color:var(--rose-600);text-align:right;border:1px solid #f3e3e3}
+    .calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+    .calc-btn{padding:14px;border-radius:10px;border:1px solid #f0f0f0;background:#fff;font-weight:700;cursor:pointer}
+    .calc-eq{grid-column:span 2;background:var(--rose-600);color:#fff;border:none}
+
+    .tips{font-size:14px;color:#666;line-height:1.6}
+
+    /* footer */
+    .footer{margin-top:18px;text-align:center;color:#a1a1a1;font-size:13px}
+
+    /* responsive */
+    @media(max-width:1100px){
+      .main-grid{grid-template-columns:1fr 360px}
+    }
+
+    @media(max-width:880px){
+      .main-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      .banner{flex-direction:column;gap:14px;align-items:flex-start}
+      .stats{margin-top:18px}
+    }
+
+    @media(max-width:480px){
+      .navlinks{display:none}
+      .brand{min-width:unset}
+      .topbar{padding:10px}
+      .avatar{width:32px;height:32px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- TOPBAR -->
+    <div class="topbar" role="navigation" aria-label="Main navigation">
+      <div class="brand" aria-hidden>
+        <div class="flag">🇺🇸</div>
+        <div class="brand-text">
+          <div class="title">Expense Suite</div>
+          <div class="subtitle">United States</div>
+        </div>
+      </div>
+
+      <nav class="navlinks" aria-label="Primary links">
+        <a href="#">Dashboard</a>
+        <a href="#">Filters</a>
+        <a href="#">Timeline</a>
+        <a href="#">Quick Calculator</a>
+
+        <select aria-label="country-select">
+          <option>us United States</option>
+        </select>
+
+        <button class="btn btn-add" title="Add expense">+ Add Expense</button>
+      </nav>
+
+      <div class="cta" aria-hidden>
+        <div class="user">
+          <div class="signed">SIGNED IN</div>
+          <div class="avatar">J</div>
+          <button class="btn-logout">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNER -->
+    <div class="banner" role="banner">
+      <div>
+        <div class="label">Personal Finance Toolkit</div>
+        <h1>Smart Expense Calculator</h1>
+        <p class="subtitle">Tailored insights for <strong>United States</strong></p>
+      </div>
+
+      <div class="banner-actions" aria-hidden>
+        <button class="action">⬇ Export CSV</button>
+        <button class="action">🗑 Clear All</button>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats" aria-hidden>
+      <div class="stat">
+        <div class="label">Total Spent</div>
+        <div class="value">$0.00</div>
+        <div class="desc">Tracks all expenses in the filtered view.</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Average Per Expense</div>
+        <div class="value">$0.00</div>
+        <div class="desc">Gives a quick idea of typical spending.</div>
+      </div>
+
+      <div class="stat">
+        <div class="label">Largest Expense</div>
+        <div class="value">$0.00</div>
+        <div class="desc">Spot significant transactions instantly.</div>
+      </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="left-col">
+
+        <!-- FORM -->
+        <div>
+          <div class="section-label">Add / Edit Expense</div>
+          <div class="card" aria-labelledby="expense-form">
+            <div class="title" id="expense-form">Expense Form</div>
+
+            <div class="form-field">
+              <label>Description</label>
+              <input type="text" placeholder="e.g. Coffee with client" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>Amount (USD)</label>
+                <input type="number" placeholder="0.00" />
+              </div>
+
+              <div class="form-field">
+                <label>Date</label>
+                <input type="date" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>Category</label>
+                <select><option>Select category</option></select>
+              </div>
+
+              <div class="form-field">
+                <label>Payment Method</label>
+                <select><option>Choose method</option></select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label>Notes (optional)</label>
+              <textarea placeholder="Add context or reminders"></textarea>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn-primary">+ Add Expense</button>
+              <button class="btn-secondary">Reset Form</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEDGER -->
+        <div>
+          <div class="section-label">Ledger</div>
+          <div class="card">
+            <div class="legend" aria-hidden>
+              <div class="item"><div class="dot income"></div><div>Income</div></div>
+              <div class="item"><div class="dot exp"></div><div>Expense</div></div>
+            </div>
+
+            <div class="title">Expense Timeline</div>
+
+            <table class="timeline" role="table" aria-label="Expense timeline">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Payment</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="7" class="empty">No expenses match your filters.</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+
+        <!-- INSIGHTS -->
+        <div>
+          <div class="section-label">Insights</div>
+
+          <div class="insights-grid">
+            <div class="card">
+              <div class="title">Categories Breakdown</div>
+              <p class="no-data">No data yet.</p>
+            </div>
+
+            <div class="card">
+              <div class="title">Budget Calculator</div>
+              <div class="calc-display">0</div>
+
+              <div class="calc-grid" aria-hidden>
+                <button class="calc-btn">AC</button>
+                <button class="calc-btn">DEL</button>
+                <button class="calc-btn">%</button>
+                <button class="calc-btn">÷</button>
+
+                <button class="calc-btn">7</button>
+                <button class="calc-btn">8</button>
+                <button class="calc-btn">9</button>
+                <button class="calc-btn">×</button>
+
+                <button class="calc-btn">4</button>
+                <button class="calc-btn">5</button>
+                <button class="calc-btn">6</button>
+                <button class="calc-btn">−</button>
+
+                <button class="calc-btn">1</button>
+                <button class="calc-btn">2</button>
+                <button class="calc-btn">3</button>
+                <button class="calc-btn">+</button>
+
+                <button class="calc-btn">0</button>
+                <button class="calc-btn">.</button>
+                <button class="calc-eq">=</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="right-col" aria-label="Controls & Tips">
+
+        <!-- FILTERS -->
+        <div>
+          <div class="section-label">Refine Results</div>
+          <div class="card">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+              <div class="title">Filters</div>
+              <button class="clear-btn">Clear Filters</button>
+            </div>
+
+            <div style="margin-bottom:12px">
+              <label style="display:block;font-weight:700;margin-bottom:6px">Search</label>
+              <input type="text" placeholder="Search description or notes" />
+            </div>
+
+            <div class="filter-grid">
+              <div>
+                <label style="display:block;font-weight:700;margin-bottom:6px">From Date</label>
+                <input type="date" />
+              </div>
+              <div>
+                <label style="display:block;font-weight:700;margin-bottom:6px">To Date</label>
+                <input type="date" />
+              </div>
+            </div>
+
+            <div class="filter-grid" style="margin-bottom:12px">
+              <div>
+                <label style="display:block;font-weight:700;margin-bottom:6px">Category</label>
+                <select><option>All Categories</option></select>
+              </div>
+
+              <div>
+                <label style="display:block;font-weight:700;margin-bottom:6px">Payment Method</label>
+                <select><option>All</option></select>
+              </div>
+            </div>
+
+            <div style="margin-bottom:4px">
+              <label style="display:block;font-weight:700;margin-bottom:6px">Sort By</label>
+              <select><option>Date ↓</option></select>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TIPS -->
+        <div>
+          <div class="section-label">Tips</div>
+          <div class="card">
+            <div class="title">Spending Health</div>
+            <p class="tips">Add expenses to see personalized tips.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-label">Tips</div>
+          <div class="card">
+            <div class="title">How to use</div>
+            <p class="tips">Plot upcoming bills vs. savings; use the calculator to check affordability before logging an expense.</p>
+            <p class="tips">Mix operators freely; the calculator supports decimal math and percentage shortcuts.</p>
+            <p class="tips">Click 'AC' for a full reset or 'DEL' to remove the last digit without clearing the entire expression.</p>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <div class="footer">Built by Hisham. Data stored locally in your browser.</div>
+
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
