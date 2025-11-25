@@ -64,7 +64,14 @@ nav {
 }
 .overview {
     display: flex;
+    gap: 30px;
+    margin: 80px;
+    font-family: "Archivo";
+    font-size: 24px;
 }
-.explore {
-
+.explore, .discover, .experience {
+    font-size: 16px;
+}
+.work-introduction {
+    margin: 30px;    
 }
