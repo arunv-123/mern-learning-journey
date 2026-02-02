@@ -16,3 +16,8 @@ console.log(arr2);
 //array concatenation
 let arr3 = [...arr,...arr1]
 console.log(arr3);
+
+
+//shallow copy
+let arr4 = [...arr]
+console.log(arr4);
