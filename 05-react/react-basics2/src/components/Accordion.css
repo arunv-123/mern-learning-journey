@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.btn button {
+    height: 50%;
+    text-align: center;
+}
+
+.h1 content {
+    
+}

@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "../../../../04-javascript"
+	},
+	{
+		"path": "../../../../03-html-css/projects/fragranzia_project"
+	},
+	{
+		"path": "../../.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "04-javascript"
+  }
+}
