@@ -11,7 +11,7 @@ function Accordion() {
   const [index, setIndex] = useState(null)
 
   let where = (x) => {
-    setIndex(x)
+    setIndex(prev => (prev === x ? null : x))
     console.log(x);
     
   }
