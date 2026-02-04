@@ -1,0 +1,65 @@
+body{
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+}
+.phone-body{
+    position: relative;
+    width: 380px;
+    height: 600px;
+    background-color: white;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.volume{
+    position: absolute;
+    right: -4px;
+    top: 90px;
+    background-color: white;
+    width: 8px;
+    height: 60px;
+}
+.notch{
+    position: absolute;
+    background-color: white;
+    width: 40%;
+    height: 6%;
+    border-radius: 30px;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.screen{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(4, 5, 41);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-bottom: 45px;
+}
+.search{
+    padding: 55px 75px 20px;  
+}
+.search input{
+    border-radius: 10px;
+    width: 100%;
+    height: 34px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+.items{
+    flex: 1;
+    overflow-y: auto;
+    color: white;
+}
+.item p{
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.147);
+}
